@@ -1,0 +1,17 @@
+syntax = "proto3";
+package micin.micin;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "micin/micin/params.proto";
+
+option go_package = "micin/x/micin/types";
+
+// GenesisState defines the micin module's genesis state.
+message GenesisState {
+  // params defines all the parameters of the module.
+  Params params = 1 [
+    (gogoproto.nullable) = false,
+    (amino.dont_omitempty) = true
+  ];
+}

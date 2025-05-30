@@ -1,0 +1,15 @@
+syntax = "proto3";
+package micin.micin;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+
+option go_package = "micin/x/micin/types";
+
+// Params defines the parameters for the module.
+message Params {
+  option (amino.name) = "micin/x/micin/Params";
+  option (gogoproto.equal) = true;
+
+  
+}
