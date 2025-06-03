@@ -25,6 +25,7 @@ const (
 	Msg_DeletePool_FullMethodName      = "/micin.dex.Msg/DeletePool"
 	Msg_RemoveLiquidity_FullMethodName = "/micin.dex.Msg/RemoveLiquidity"
 	Msg_AddLiquidity_FullMethodName    = "/micin.dex.Msg/AddLiquidity"
+	Msg_SubmitSpeedTest_FullMethodName = "/micin.dex.Msg/SubmitSpeedTest"
 )
 
 // MsgClient is the client API for Msg service.
@@ -37,6 +38,7 @@ type MsgClient interface {
 	DeletePool(ctx context.Context, in *MsgDeletePool, opts ...grpc.CallOption) (*MsgDeletePoolResponse, error)
 	RemoveLiquidity(ctx context.Context, in *MsgRemoveLiquidity, opts ...grpc.CallOption) (*MsgRemoveLiquidityResponse, error)
 	AddLiquidity(ctx context.Context, in *MsgAddLiquidity, opts ...grpc.CallOption) (*MsgAddLiquidityResponse, error)
+	SubmitSpeedTest(ctx context.Context, in *MsgSubmitSpeedTest, opts ...grpc.CallOption) (*MsgSubmitSpeedTestResponse, error)
 }
 
 type msgClient struct {
@@ -101,6 +103,15 @@ func (c *msgClient) AddLiquidity(ctx context.Context, in *MsgAddLiquidity, opts 
 	return out, nil
 }
 
+func (c *msgClient) SubmitSpeedTest(ctx context.Context, in *MsgSubmitSpeedTest, opts ...grpc.CallOption) (*MsgSubmitSpeedTestResponse, error) {
+	out := new(MsgSubmitSpeedTestResponse)
+	err := c.cc.Invoke(ctx, Msg_SubmitSpeedTest_FullMethodName, in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 // All implementations must embed UnimplementedMsgServer
 // for forward compatibility
@@ -111,6 +122,7 @@ type MsgServer interface {
 	DeletePool(context.Context, *MsgDeletePool) (*MsgDeletePoolResponse, error)
 	RemoveLiquidity(context.Context, *MsgRemoveLiquidity) (*MsgRemoveLiquidityResponse, error)
 	AddLiquidity(context.Context, *MsgAddLiquidity) (*MsgAddLiquidityResponse, error)
+	SubmitSpeedTest(context.Context, *MsgSubmitSpeedTest) (*MsgSubmitSpeedTestResponse, error)
 	mustEmbedUnimplementedMsgServer()
 }
 
@@ -135,6 +147,9 @@ func (UnimplementedMsgServer) RemoveLiquidity(context.Context, *MsgRemoveLiquidi
 }
 func (UnimplementedMsgServer) AddLiquidity(context.Context, *MsgAddLiquidity) (*MsgAddLiquidityResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method AddLiquidity not implemented")
+}
+func (UnimplementedMsgServer) SubmitSpeedTest(context.Context, *MsgSubmitSpeedTest) (*MsgSubmitSpeedTestResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubmitSpeedTest not implemented")
 }
 func (UnimplementedMsgServer) mustEmbedUnimplementedMsgServer() {}
 
@@ -257,6 +272,24 @@ func _Msg_AddLiquidity_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Msg_SubmitSpeedTest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgSubmitSpeedTest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).SubmitSpeedTest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Msg_SubmitSpeedTest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).SubmitSpeedTest(ctx, req.(*MsgSubmitSpeedTest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Msg_ServiceDesc is the grpc.ServiceDesc for Msg service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -287,6 +320,10 @@ var Msg_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "AddLiquidity",
 			Handler:    _Msg_AddLiquidity_Handler,
+		},
+		{
+			MethodName: "SubmitSpeedTest",
+			Handler:    _Msg_SubmitSpeedTest_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

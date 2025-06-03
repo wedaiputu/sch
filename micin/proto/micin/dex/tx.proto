@@ -21,6 +21,7 @@ service Msg {
   rpc DeletePool      (MsgDeletePool     ) returns (MsgDeletePoolResponse     );
   rpc RemoveLiquidity (MsgRemoveLiquidity) returns (MsgRemoveLiquidityResponse);
   rpc AddLiquidity    (MsgAddLiquidity   ) returns (MsgAddLiquidityResponse   );
+  rpc SubmitSpeedTest(MsgSubmitSpeedTest) returns (MsgSubmitSpeedTestResponse);
 }
 
 
@@ -99,3 +100,10 @@ message MsgAddLiquidityResponse {}
 
 message MsgRemoveLiquidityResponse {}
 
+message MsgSubmitSpeedTest {
+  string creator = 1;
+  int64 speed_mbps = 2;
+  int64 timestamp = 3;
+}
+
+message MsgSubmitSpeedTestResponse {}

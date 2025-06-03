@@ -5743,6 +5743,878 @@ func (x *fastReflection_MsgRemoveLiquidityResponse) ProtoMethods() *protoiface.M
 	}
 }
 
+var (
+	md_MsgSubmitSpeedTest            protoreflect.MessageDescriptor
+	fd_MsgSubmitSpeedTest_creator    protoreflect.FieldDescriptor
+	fd_MsgSubmitSpeedTest_speed_mbps protoreflect.FieldDescriptor
+	fd_MsgSubmitSpeedTest_timestamp  protoreflect.FieldDescriptor
+)
+
+func init() {
+	file_micin_dex_tx_proto_init()
+	md_MsgSubmitSpeedTest = File_micin_dex_tx_proto.Messages().ByName("MsgSubmitSpeedTest")
+	fd_MsgSubmitSpeedTest_creator = md_MsgSubmitSpeedTest.Fields().ByName("creator")
+	fd_MsgSubmitSpeedTest_speed_mbps = md_MsgSubmitSpeedTest.Fields().ByName("speed_mbps")
+	fd_MsgSubmitSpeedTest_timestamp = md_MsgSubmitSpeedTest.Fields().ByName("timestamp")
+}
+
+var _ protoreflect.Message = (*fastReflection_MsgSubmitSpeedTest)(nil)
+
+type fastReflection_MsgSubmitSpeedTest MsgSubmitSpeedTest
+
+func (x *MsgSubmitSpeedTest) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgSubmitSpeedTest)(x)
+}
+
+func (x *MsgSubmitSpeedTest) slowProtoReflect() protoreflect.Message {
+	mi := &file_micin_dex_tx_proto_msgTypes[12]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_MsgSubmitSpeedTest_messageType fastReflection_MsgSubmitSpeedTest_messageType
+var _ protoreflect.MessageType = fastReflection_MsgSubmitSpeedTest_messageType{}
+
+type fastReflection_MsgSubmitSpeedTest_messageType struct{}
+
+func (x fastReflection_MsgSubmitSpeedTest_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgSubmitSpeedTest)(nil)
+}
+func (x fastReflection_MsgSubmitSpeedTest_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgSubmitSpeedTest)
+}
+func (x fastReflection_MsgSubmitSpeedTest_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgSubmitSpeedTest
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_MsgSubmitSpeedTest) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgSubmitSpeedTest
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_MsgSubmitSpeedTest) Type() protoreflect.MessageType {
+	return _fastReflection_MsgSubmitSpeedTest_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_MsgSubmitSpeedTest) New() protoreflect.Message {
+	return new(fastReflection_MsgSubmitSpeedTest)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_MsgSubmitSpeedTest) Interface() protoreflect.ProtoMessage {
+	return (*MsgSubmitSpeedTest)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_MsgSubmitSpeedTest) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+	if x.Creator != "" {
+		value := protoreflect.ValueOfString(x.Creator)
+		if !f(fd_MsgSubmitSpeedTest_creator, value) {
+			return
+		}
+	}
+	if x.SpeedMbps != int64(0) {
+		value := protoreflect.ValueOfInt64(x.SpeedMbps)
+		if !f(fd_MsgSubmitSpeedTest_speed_mbps, value) {
+			return
+		}
+	}
+	if x.Timestamp != int64(0) {
+		value := protoreflect.ValueOfInt64(x.Timestamp)
+		if !f(fd_MsgSubmitSpeedTest_timestamp, value) {
+			return
+		}
+	}
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_MsgSubmitSpeedTest) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	case "micin.dex.MsgSubmitSpeedTest.creator":
+		return x.Creator != ""
+	case "micin.dex.MsgSubmitSpeedTest.speed_mbps":
+		return x.SpeedMbps != int64(0)
+	case "micin.dex.MsgSubmitSpeedTest.timestamp":
+		return x.Timestamp != int64(0)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: micin.dex.MsgSubmitSpeedTest"))
+		}
+		panic(fmt.Errorf("message micin.dex.MsgSubmitSpeedTest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgSubmitSpeedTest) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	case "micin.dex.MsgSubmitSpeedTest.creator":
+		x.Creator = ""
+	case "micin.dex.MsgSubmitSpeedTest.speed_mbps":
+		x.SpeedMbps = int64(0)
+	case "micin.dex.MsgSubmitSpeedTest.timestamp":
+		x.Timestamp = int64(0)
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: micin.dex.MsgSubmitSpeedTest"))
+		}
+		panic(fmt.Errorf("message micin.dex.MsgSubmitSpeedTest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_MsgSubmitSpeedTest) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	case "micin.dex.MsgSubmitSpeedTest.creator":
+		value := x.Creator
+		return protoreflect.ValueOfString(value)
+	case "micin.dex.MsgSubmitSpeedTest.speed_mbps":
+		value := x.SpeedMbps
+		return protoreflect.ValueOfInt64(value)
+	case "micin.dex.MsgSubmitSpeedTest.timestamp":
+		value := x.Timestamp
+		return protoreflect.ValueOfInt64(value)
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: micin.dex.MsgSubmitSpeedTest"))
+		}
+		panic(fmt.Errorf("message micin.dex.MsgSubmitSpeedTest does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgSubmitSpeedTest) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	case "micin.dex.MsgSubmitSpeedTest.creator":
+		x.Creator = value.Interface().(string)
+	case "micin.dex.MsgSubmitSpeedTest.speed_mbps":
+		x.SpeedMbps = value.Int()
+	case "micin.dex.MsgSubmitSpeedTest.timestamp":
+		x.Timestamp = value.Int()
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: micin.dex.MsgSubmitSpeedTest"))
+		}
+		panic(fmt.Errorf("message micin.dex.MsgSubmitSpeedTest does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgSubmitSpeedTest) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "micin.dex.MsgSubmitSpeedTest.creator":
+		panic(fmt.Errorf("field creator of message micin.dex.MsgSubmitSpeedTest is not mutable"))
+	case "micin.dex.MsgSubmitSpeedTest.speed_mbps":
+		panic(fmt.Errorf("field speed_mbps of message micin.dex.MsgSubmitSpeedTest is not mutable"))
+	case "micin.dex.MsgSubmitSpeedTest.timestamp":
+		panic(fmt.Errorf("field timestamp of message micin.dex.MsgSubmitSpeedTest is not mutable"))
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: micin.dex.MsgSubmitSpeedTest"))
+		}
+		panic(fmt.Errorf("message micin.dex.MsgSubmitSpeedTest does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_MsgSubmitSpeedTest) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	case "micin.dex.MsgSubmitSpeedTest.creator":
+		return protoreflect.ValueOfString("")
+	case "micin.dex.MsgSubmitSpeedTest.speed_mbps":
+		return protoreflect.ValueOfInt64(int64(0))
+	case "micin.dex.MsgSubmitSpeedTest.timestamp":
+		return protoreflect.ValueOfInt64(int64(0))
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: micin.dex.MsgSubmitSpeedTest"))
+		}
+		panic(fmt.Errorf("message micin.dex.MsgSubmitSpeedTest does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_MsgSubmitSpeedTest) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in micin.dex.MsgSubmitSpeedTest", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_MsgSubmitSpeedTest) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgSubmitSpeedTest) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_MsgSubmitSpeedTest) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_MsgSubmitSpeedTest) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*MsgSubmitSpeedTest)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		l = len(x.Creator)
+		if l > 0 {
+			n += 1 + l + runtime.Sov(uint64(l))
+		}
+		if x.SpeedMbps != 0 {
+			n += 1 + runtime.Sov(uint64(x.SpeedMbps))
+		}
+		if x.Timestamp != 0 {
+			n += 1 + runtime.Sov(uint64(x.Timestamp))
+		}
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*MsgSubmitSpeedTest)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if x.Timestamp != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.Timestamp))
+			i--
+			dAtA[i] = 0x18
+		}
+		if x.SpeedMbps != 0 {
+			i = runtime.EncodeVarint(dAtA, i, uint64(x.SpeedMbps))
+			i--
+			dAtA[i] = 0x10
+		}
+		if len(x.Creator) > 0 {
+			i -= len(x.Creator)
+			copy(dAtA[i:], x.Creator)
+			i = runtime.EncodeVarint(dAtA, i, uint64(len(x.Creator)))
+			i--
+			dAtA[i] = 0xa
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*MsgSubmitSpeedTest)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgSubmitSpeedTest: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgSubmitSpeedTest: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			case 1:
+				if wireType != 2 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+				}
+				var stringLen uint64
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					stringLen |= uint64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+				intStringLen := int(stringLen)
+				if intStringLen < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				postIndex := iNdEx + intStringLen
+				if postIndex < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if postIndex > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				x.Creator = string(dAtA[iNdEx:postIndex])
+				iNdEx = postIndex
+			case 2:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field SpeedMbps", wireType)
+				}
+				x.SpeedMbps = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.SpeedMbps |= int64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			case 3:
+				if wireType != 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: wrong wireType = %d for field Timestamp", wireType)
+				}
+				x.Timestamp = 0
+				for shift := uint(0); ; shift += 7 {
+					if shift >= 64 {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+					}
+					if iNdEx >= l {
+						return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+					}
+					b := dAtA[iNdEx]
+					iNdEx++
+					x.Timestamp |= int64(b&0x7F) << shift
+					if b < 0x80 {
+						break
+					}
+				}
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
+var (
+	md_MsgSubmitSpeedTestResponse protoreflect.MessageDescriptor
+)
+
+func init() {
+	file_micin_dex_tx_proto_init()
+	md_MsgSubmitSpeedTestResponse = File_micin_dex_tx_proto.Messages().ByName("MsgSubmitSpeedTestResponse")
+}
+
+var _ protoreflect.Message = (*fastReflection_MsgSubmitSpeedTestResponse)(nil)
+
+type fastReflection_MsgSubmitSpeedTestResponse MsgSubmitSpeedTestResponse
+
+func (x *MsgSubmitSpeedTestResponse) ProtoReflect() protoreflect.Message {
+	return (*fastReflection_MsgSubmitSpeedTestResponse)(x)
+}
+
+func (x *MsgSubmitSpeedTestResponse) slowProtoReflect() protoreflect.Message {
+	mi := &file_micin_dex_tx_proto_msgTypes[13]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+var _fastReflection_MsgSubmitSpeedTestResponse_messageType fastReflection_MsgSubmitSpeedTestResponse_messageType
+var _ protoreflect.MessageType = fastReflection_MsgSubmitSpeedTestResponse_messageType{}
+
+type fastReflection_MsgSubmitSpeedTestResponse_messageType struct{}
+
+func (x fastReflection_MsgSubmitSpeedTestResponse_messageType) Zero() protoreflect.Message {
+	return (*fastReflection_MsgSubmitSpeedTestResponse)(nil)
+}
+func (x fastReflection_MsgSubmitSpeedTestResponse_messageType) New() protoreflect.Message {
+	return new(fastReflection_MsgSubmitSpeedTestResponse)
+}
+func (x fastReflection_MsgSubmitSpeedTestResponse_messageType) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgSubmitSpeedTestResponse
+}
+
+// Descriptor returns message descriptor, which contains only the protobuf
+// type information for the message.
+func (x *fastReflection_MsgSubmitSpeedTestResponse) Descriptor() protoreflect.MessageDescriptor {
+	return md_MsgSubmitSpeedTestResponse
+}
+
+// Type returns the message type, which encapsulates both Go and protobuf
+// type information. If the Go type information is not needed,
+// it is recommended that the message descriptor be used instead.
+func (x *fastReflection_MsgSubmitSpeedTestResponse) Type() protoreflect.MessageType {
+	return _fastReflection_MsgSubmitSpeedTestResponse_messageType
+}
+
+// New returns a newly allocated and mutable empty message.
+func (x *fastReflection_MsgSubmitSpeedTestResponse) New() protoreflect.Message {
+	return new(fastReflection_MsgSubmitSpeedTestResponse)
+}
+
+// Interface unwraps the message reflection interface and
+// returns the underlying ProtoMessage interface.
+func (x *fastReflection_MsgSubmitSpeedTestResponse) Interface() protoreflect.ProtoMessage {
+	return (*MsgSubmitSpeedTestResponse)(x)
+}
+
+// Range iterates over every populated field in an undefined order,
+// calling f for each field descriptor and value encountered.
+// Range returns immediately if f returns false.
+// While iterating, mutating operations may only be performed
+// on the current field descriptor.
+func (x *fastReflection_MsgSubmitSpeedTestResponse) Range(f func(protoreflect.FieldDescriptor, protoreflect.Value) bool) {
+}
+
+// Has reports whether a field is populated.
+//
+// Some fields have the property of nullability where it is possible to
+// distinguish between the default value of a field and whether the field
+// was explicitly populated with the default value. Singular message fields,
+// member fields of a oneof, and proto2 scalar fields are nullable. Such
+// fields are populated only if explicitly set.
+//
+// In other cases (aside from the nullable cases above),
+// a proto3 scalar field is populated if it contains a non-zero value, and
+// a repeated field is populated if it is non-empty.
+func (x *fastReflection_MsgSubmitSpeedTestResponse) Has(fd protoreflect.FieldDescriptor) bool {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: micin.dex.MsgSubmitSpeedTestResponse"))
+		}
+		panic(fmt.Errorf("message micin.dex.MsgSubmitSpeedTestResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Clear clears the field such that a subsequent Has call reports false.
+//
+// Clearing an extension field clears both the extension type and value
+// associated with the given field number.
+//
+// Clear is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgSubmitSpeedTestResponse) Clear(fd protoreflect.FieldDescriptor) {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: micin.dex.MsgSubmitSpeedTestResponse"))
+		}
+		panic(fmt.Errorf("message micin.dex.MsgSubmitSpeedTestResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Get retrieves the value for a field.
+//
+// For unpopulated scalars, it returns the default value, where
+// the default value of a bytes scalar is guaranteed to be a copy.
+// For unpopulated composite types, it returns an empty, read-only view
+// of the value; to obtain a mutable reference, use Mutable.
+func (x *fastReflection_MsgSubmitSpeedTestResponse) Get(descriptor protoreflect.FieldDescriptor) protoreflect.Value {
+	switch descriptor.FullName() {
+	default:
+		if descriptor.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: micin.dex.MsgSubmitSpeedTestResponse"))
+		}
+		panic(fmt.Errorf("message micin.dex.MsgSubmitSpeedTestResponse does not contain field %s", descriptor.FullName()))
+	}
+}
+
+// Set stores the value for a field.
+//
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType.
+// When setting a composite type, it is unspecified whether the stored value
+// aliases the source's memory in any way. If the composite value is an
+// empty, read-only value, then it panics.
+//
+// Set is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgSubmitSpeedTestResponse) Set(fd protoreflect.FieldDescriptor, value protoreflect.Value) {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: micin.dex.MsgSubmitSpeedTestResponse"))
+		}
+		panic(fmt.Errorf("message micin.dex.MsgSubmitSpeedTestResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// Mutable returns a mutable reference to a composite type.
+//
+// If the field is unpopulated, it may allocate a composite value.
+// For a field belonging to a oneof, it implicitly clears any other field
+// that may be currently set within the same oneof.
+// For extension fields, it implicitly stores the provided ExtensionType
+// if not already stored.
+// It panics if the field does not contain a composite type.
+//
+// Mutable is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgSubmitSpeedTestResponse) Mutable(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: micin.dex.MsgSubmitSpeedTestResponse"))
+		}
+		panic(fmt.Errorf("message micin.dex.MsgSubmitSpeedTestResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// NewField returns a new value that is assignable to the field
+// for the given descriptor. For scalars, this returns the default value.
+// For lists, maps, and messages, this returns a new, empty, mutable value.
+func (x *fastReflection_MsgSubmitSpeedTestResponse) NewField(fd protoreflect.FieldDescriptor) protoreflect.Value {
+	switch fd.FullName() {
+	default:
+		if fd.IsExtension() {
+			panic(fmt.Errorf("proto3 declared messages do not support extensions: micin.dex.MsgSubmitSpeedTestResponse"))
+		}
+		panic(fmt.Errorf("message micin.dex.MsgSubmitSpeedTestResponse does not contain field %s", fd.FullName()))
+	}
+}
+
+// WhichOneof reports which field within the oneof is populated,
+// returning nil if none are populated.
+// It panics if the oneof descriptor does not belong to this message.
+func (x *fastReflection_MsgSubmitSpeedTestResponse) WhichOneof(d protoreflect.OneofDescriptor) protoreflect.FieldDescriptor {
+	switch d.FullName() {
+	default:
+		panic(fmt.Errorf("%s is not a oneof field in micin.dex.MsgSubmitSpeedTestResponse", d.FullName()))
+	}
+	panic("unreachable")
+}
+
+// GetUnknown retrieves the entire list of unknown fields.
+// The caller may only mutate the contents of the RawFields
+// if the mutated bytes are stored back into the message with SetUnknown.
+func (x *fastReflection_MsgSubmitSpeedTestResponse) GetUnknown() protoreflect.RawFields {
+	return x.unknownFields
+}
+
+// SetUnknown stores an entire list of unknown fields.
+// The raw fields must be syntactically valid according to the wire format.
+// An implementation may panic if this is not the case.
+// Once stored, the caller must not mutate the content of the RawFields.
+// An empty RawFields may be passed to clear the fields.
+//
+// SetUnknown is a mutating operation and unsafe for concurrent use.
+func (x *fastReflection_MsgSubmitSpeedTestResponse) SetUnknown(fields protoreflect.RawFields) {
+	x.unknownFields = fields
+}
+
+// IsValid reports whether the message is valid.
+//
+// An invalid message is an empty, read-only value.
+//
+// An invalid message often corresponds to a nil pointer of the concrete
+// message type, but the details are implementation dependent.
+// Validity is not part of the protobuf data model, and may not
+// be preserved in marshaling or other operations.
+func (x *fastReflection_MsgSubmitSpeedTestResponse) IsValid() bool {
+	return x != nil
+}
+
+// ProtoMethods returns optional fastReflectionFeature-path implementations of various operations.
+// This method may return nil.
+//
+// The returned methods type is identical to
+// "google.golang.org/protobuf/runtime/protoiface".Methods.
+// Consult the protoiface package documentation for details.
+func (x *fastReflection_MsgSubmitSpeedTestResponse) ProtoMethods() *protoiface.Methods {
+	size := func(input protoiface.SizeInput) protoiface.SizeOutput {
+		x := input.Message.Interface().(*MsgSubmitSpeedTestResponse)
+		if x == nil {
+			return protoiface.SizeOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Size:              0,
+			}
+		}
+		options := runtime.SizeInputToOptions(input)
+		_ = options
+		var n int
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			n += len(x.unknownFields)
+		}
+		return protoiface.SizeOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Size:              n,
+		}
+	}
+
+	marshal := func(input protoiface.MarshalInput) (protoiface.MarshalOutput, error) {
+		x := input.Message.Interface().(*MsgSubmitSpeedTestResponse)
+		if x == nil {
+			return protoiface.MarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Buf:               input.Buf,
+			}, nil
+		}
+		options := runtime.MarshalInputToOptions(input)
+		_ = options
+		size := options.Size(x)
+		dAtA := make([]byte, size)
+		i := len(dAtA)
+		_ = i
+		var l int
+		_ = l
+		if x.unknownFields != nil {
+			i -= len(x.unknownFields)
+			copy(dAtA[i:], x.unknownFields)
+		}
+		if input.Buf != nil {
+			input.Buf = append(input.Buf, dAtA...)
+		} else {
+			input.Buf = dAtA
+		}
+		return protoiface.MarshalOutput{
+			NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+			Buf:               input.Buf,
+		}, nil
+	}
+	unmarshal := func(input protoiface.UnmarshalInput) (protoiface.UnmarshalOutput, error) {
+		x := input.Message.Interface().(*MsgSubmitSpeedTestResponse)
+		if x == nil {
+			return protoiface.UnmarshalOutput{
+				NoUnkeyedLiterals: input.NoUnkeyedLiterals,
+				Flags:             input.Flags,
+			}, nil
+		}
+		options := runtime.UnmarshalInputToOptions(input)
+		_ = options
+		dAtA := input.Buf
+		l := len(dAtA)
+		iNdEx := 0
+		for iNdEx < l {
+			preIndex := iNdEx
+			var wire uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrIntOverflow
+				}
+				if iNdEx >= l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				wire |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			fieldNum := int32(wire >> 3)
+			wireType := int(wire & 0x7)
+			if wireType == 4 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgSubmitSpeedTestResponse: wiretype end group for non-group")
+			}
+			if fieldNum <= 0 {
+				return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, fmt.Errorf("proto: MsgSubmitSpeedTestResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+			}
+			switch fieldNum {
+			default:
+				iNdEx = preIndex
+				skippy, err := runtime.Skip(dAtA[iNdEx:])
+				if err != nil {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, err
+				}
+				if (skippy < 0) || (iNdEx+skippy) < 0 {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, runtime.ErrInvalidLength
+				}
+				if (iNdEx + skippy) > l {
+					return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+				}
+				if !options.DiscardUnknown {
+					x.unknownFields = append(x.unknownFields, dAtA[iNdEx:iNdEx+skippy]...)
+				}
+				iNdEx += skippy
+			}
+		}
+
+		if iNdEx > l {
+			return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, io.ErrUnexpectedEOF
+		}
+		return protoiface.UnmarshalOutput{NoUnkeyedLiterals: input.NoUnkeyedLiterals, Flags: input.Flags}, nil
+	}
+	return &protoiface.Methods{
+		NoUnkeyedLiterals: struct{}{},
+		Flags:             protoiface.SupportMarshalDeterministic | protoiface.SupportUnmarshalDiscardUnknown,
+		Size:              size,
+		Marshal:           marshal,
+		Unmarshal:         unmarshal,
+		Merge:             nil,
+		CheckInitialized:  nil,
+	}
+}
+
 // Code generated by protoc-gen-go. DO NOT EDIT.
 // versions:
 // 	protoc-gen-go v1.27.0
@@ -6280,6 +7152,83 @@ func (*MsgRemoveLiquidityResponse) Descriptor() ([]byte, []int) {
 	return file_micin_dex_tx_proto_rawDescGZIP(), []int{11}
 }
 
+type MsgSubmitSpeedTest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Creator   string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	SpeedMbps int64  `protobuf:"varint,2,opt,name=speed_mbps,json=speedMbps,proto3" json:"speed_mbps,omitempty"`
+	Timestamp int64  `protobuf:"varint,3,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+}
+
+func (x *MsgSubmitSpeedTest) Reset() {
+	*x = MsgSubmitSpeedTest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_micin_dex_tx_proto_msgTypes[12]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MsgSubmitSpeedTest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MsgSubmitSpeedTest) ProtoMessage() {}
+
+// Deprecated: Use MsgSubmitSpeedTest.ProtoReflect.Descriptor instead.
+func (*MsgSubmitSpeedTest) Descriptor() ([]byte, []int) {
+	return file_micin_dex_tx_proto_rawDescGZIP(), []int{12}
+}
+
+func (x *MsgSubmitSpeedTest) GetCreator() string {
+	if x != nil {
+		return x.Creator
+	}
+	return ""
+}
+
+func (x *MsgSubmitSpeedTest) GetSpeedMbps() int64 {
+	if x != nil {
+		return x.SpeedMbps
+	}
+	return 0
+}
+
+func (x *MsgSubmitSpeedTest) GetTimestamp() int64 {
+	if x != nil {
+		return x.Timestamp
+	}
+	return 0
+}
+
+type MsgSubmitSpeedTestResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *MsgSubmitSpeedTestResponse) Reset() {
+	*x = MsgSubmitSpeedTestResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_micin_dex_tx_proto_msgTypes[13]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MsgSubmitSpeedTestResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MsgSubmitSpeedTestResponse) ProtoMessage() {}
+
+// Deprecated: Use MsgSubmitSpeedTestResponse.ProtoReflect.Descriptor instead.
+func (*MsgSubmitSpeedTestResponse) Descriptor() ([]byte, []int) {
+	return file_micin_dex_tx_proto_rawDescGZIP(), []int{13}
+}
+
 var File_micin_dex_tx_proto protoreflect.FileDescriptor
 
 var file_micin_dex_tx_proto_rawDesc = []byte{
@@ -6359,45 +7308,60 @@ var file_micin_dex_tx_proto_rawDesc = []byte{
 	0x61, 0x74, 0x6f, 0x72, 0x22, 0x19, 0x0a, 0x17, 0x4d, 0x73, 0x67, 0x41, 0x64, 0x64, 0x4c, 0x69,
 	0x71, 0x75, 0x69, 0x64, 0x69, 0x74, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
 	0x1c, 0x0a, 0x1a, 0x4d, 0x73, 0x67, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x4c, 0x69, 0x71, 0x75,
-	0x69, 0x64, 0x69, 0x74, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0xe3, 0x03,
-	0x0a, 0x03, 0x4d, 0x73, 0x67, 0x12, 0x4e, 0x0a, 0x0c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50,
-	0x61, 0x72, 0x61, 0x6d, 0x73, 0x12, 0x1a, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65,
-	0x78, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d,
-	0x73, 0x1a, 0x22, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73,
-	0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x48, 0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50,
-	0x6f, 0x6f, 0x6c, 0x12, 0x18, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65, 0x78, 0x2e,
-	0x4d, 0x73, 0x67, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x6f, 0x6f, 0x6c, 0x1a, 0x20, 0x2e,
-	0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x43, 0x72, 0x65,
-	0x61, 0x74, 0x65, 0x50, 0x6f, 0x6f, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
-	0x48, 0x0a, 0x0a, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x6f, 0x6f, 0x6c, 0x12, 0x18, 0x2e,
-	0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64,
-	0x61, 0x74, 0x65, 0x50, 0x6f, 0x6f, 0x6c, 0x1a, 0x20, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e,
-	0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x6f, 0x6f,
-	0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x48, 0x0a, 0x0a, 0x44, 0x65, 0x6c,
-	0x65, 0x74, 0x65, 0x50, 0x6f, 0x6f, 0x6c, 0x12, 0x18, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e,
-	0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x50, 0x6f, 0x6f,
-	0x6c, 0x1a, 0x20, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73,
-	0x67, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x50, 0x6f, 0x6f, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x12, 0x57, 0x0a, 0x0f, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x4c, 0x69, 0x71,
-	0x75, 0x69, 0x64, 0x69, 0x74, 0x79, 0x12, 0x1d, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64,
-	0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x4c, 0x69, 0x71, 0x75,
-	0x69, 0x64, 0x69, 0x74, 0x79, 0x1a, 0x25, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65,
-	0x78, 0x2e, 0x4d, 0x73, 0x67, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x4c, 0x69, 0x71, 0x75, 0x69,
-	0x64, 0x69, 0x74, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x4e, 0x0a, 0x0c,
-	0x41, 0x64, 0x64, 0x4c, 0x69, 0x71, 0x75, 0x69, 0x64, 0x69, 0x74, 0x79, 0x12, 0x1a, 0x2e, 0x6d,
-	0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x41, 0x64, 0x64, 0x4c,
-	0x69, 0x71, 0x75, 0x69, 0x64, 0x69, 0x74, 0x79, 0x1a, 0x22, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e,
-	0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x41, 0x64, 0x64, 0x4c, 0x69, 0x71, 0x75, 0x69,
-	0x64, 0x69, 0x74, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x1a, 0x05, 0x80, 0xe7,
-	0xb0, 0x2a, 0x01, 0x42, 0x72, 0x0a, 0x0d, 0x63, 0x6f, 0x6d, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e,
-	0x2e, 0x64, 0x65, 0x78, 0x42, 0x07, 0x54, 0x78, 0x50, 0x72, 0x6f, 0x74, 0x6f, 0x50, 0x01, 0x5a,
-	0x13, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x6d, 0x69, 0x63, 0x69, 0x6e,
-	0x2f, 0x64, 0x65, 0x78, 0xa2, 0x02, 0x03, 0x4d, 0x44, 0x58, 0xaa, 0x02, 0x09, 0x4d, 0x69, 0x63,
-	0x69, 0x6e, 0x2e, 0x44, 0x65, 0x78, 0xca, 0x02, 0x09, 0x4d, 0x69, 0x63, 0x69, 0x6e, 0x5c, 0x44,
-	0x65, 0x78, 0xe2, 0x02, 0x15, 0x4d, 0x69, 0x63, 0x69, 0x6e, 0x5c, 0x44, 0x65, 0x78, 0x5c, 0x47,
-	0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02, 0x0a, 0x4d, 0x69, 0x63,
-	0x69, 0x6e, 0x3a, 0x3a, 0x44, 0x65, 0x78, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x69, 0x64, 0x69, 0x74, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22, 0x6b, 0x0a,
+	0x12, 0x4d, 0x73, 0x67, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x53, 0x70, 0x65, 0x65, 0x64, 0x54,
+	0x65, 0x73, 0x74, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x72, 0x65, 0x61, 0x74, 0x6f, 0x72, 0x12, 0x1d, 0x0a,
+	0x0a, 0x73, 0x70, 0x65, 0x65, 0x64, 0x5f, 0x6d, 0x62, 0x70, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x03, 0x52, 0x09, 0x73, 0x70, 0x65, 0x65, 0x64, 0x4d, 0x62, 0x70, 0x73, 0x12, 0x1c, 0x0a, 0x09,
+	0x74, 0x69, 0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x18, 0x03, 0x20, 0x01, 0x28, 0x03, 0x52,
+	0x09, 0x74, 0x69, 0x6d, 0x65, 0x73, 0x74, 0x61, 0x6d, 0x70, 0x22, 0x1c, 0x0a, 0x1a, 0x4d, 0x73,
+	0x67, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x53, 0x70, 0x65, 0x65, 0x64, 0x54, 0x65, 0x73, 0x74,
+	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x32, 0xbc, 0x04, 0x0a, 0x03, 0x4d, 0x73, 0x67,
+	0x12, 0x4e, 0x0a, 0x0c, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73,
+	0x12, 0x1a, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67,
+	0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x1a, 0x22, 0x2e, 0x6d,
+	0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61,
+	0x74, 0x65, 0x50, 0x61, 0x72, 0x61, 0x6d, 0x73, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x48, 0x0a, 0x0a, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x6f, 0x6f, 0x6c, 0x12, 0x18,
+	0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x50, 0x6f, 0x6f, 0x6c, 0x1a, 0x20, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e,
+	0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x50, 0x6f,
+	0x6f, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x48, 0x0a, 0x0a, 0x55, 0x70,
+	0x64, 0x61, 0x74, 0x65, 0x50, 0x6f, 0x6f, 0x6c, 0x12, 0x18, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e,
+	0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x6f,
+	0x6f, 0x6c, 0x1a, 0x20, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d,
+	0x73, 0x67, 0x55, 0x70, 0x64, 0x61, 0x74, 0x65, 0x50, 0x6f, 0x6f, 0x6c, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x12, 0x48, 0x0a, 0x0a, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x50, 0x6f,
+	0x6f, 0x6c, 0x12, 0x18, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d,
+	0x73, 0x67, 0x44, 0x65, 0x6c, 0x65, 0x74, 0x65, 0x50, 0x6f, 0x6f, 0x6c, 0x1a, 0x20, 0x2e, 0x6d,
+	0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x44, 0x65, 0x6c, 0x65,
+	0x74, 0x65, 0x50, 0x6f, 0x6f, 0x6c, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x57,
+	0x0a, 0x0f, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x4c, 0x69, 0x71, 0x75, 0x69, 0x64, 0x69, 0x74,
+	0x79, 0x12, 0x1d, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73,
+	0x67, 0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x4c, 0x69, 0x71, 0x75, 0x69, 0x64, 0x69, 0x74, 0x79,
+	0x1a, 0x25, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67,
+	0x52, 0x65, 0x6d, 0x6f, 0x76, 0x65, 0x4c, 0x69, 0x71, 0x75, 0x69, 0x64, 0x69, 0x74, 0x79, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x4e, 0x0a, 0x0c, 0x41, 0x64, 0x64, 0x4c, 0x69,
+	0x71, 0x75, 0x69, 0x64, 0x69, 0x74, 0x79, 0x12, 0x1a, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e,
+	0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x41, 0x64, 0x64, 0x4c, 0x69, 0x71, 0x75, 0x69, 0x64,
+	0x69, 0x74, 0x79, 0x1a, 0x22, 0x2e, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65, 0x78, 0x2e,
+	0x4d, 0x73, 0x67, 0x41, 0x64, 0x64, 0x4c, 0x69, 0x71, 0x75, 0x69, 0x64, 0x69, 0x74, 0x79, 0x52,
+	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x57, 0x0a, 0x0f, 0x53, 0x75, 0x62, 0x6d, 0x69,
+	0x74, 0x53, 0x70, 0x65, 0x65, 0x64, 0x54, 0x65, 0x73, 0x74, 0x12, 0x1d, 0x2e, 0x6d, 0x69, 0x63,
+	0x69, 0x6e, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74,
+	0x53, 0x70, 0x65, 0x65, 0x64, 0x54, 0x65, 0x73, 0x74, 0x1a, 0x25, 0x2e, 0x6d, 0x69, 0x63, 0x69,
+	0x6e, 0x2e, 0x64, 0x65, 0x78, 0x2e, 0x4d, 0x73, 0x67, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x53,
+	0x70, 0x65, 0x65, 0x64, 0x54, 0x65, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x1a, 0x05, 0x80, 0xe7, 0xb0, 0x2a, 0x01, 0x42, 0x72, 0x0a, 0x0d, 0x63, 0x6f, 0x6d, 0x2e, 0x6d,
+	0x69, 0x63, 0x69, 0x6e, 0x2e, 0x64, 0x65, 0x78, 0x42, 0x07, 0x54, 0x78, 0x50, 0x72, 0x6f, 0x74,
+	0x6f, 0x50, 0x01, 0x5a, 0x13, 0x6d, 0x69, 0x63, 0x69, 0x6e, 0x2f, 0x61, 0x70, 0x69, 0x2f, 0x6d,
+	0x69, 0x63, 0x69, 0x6e, 0x2f, 0x64, 0x65, 0x78, 0xa2, 0x02, 0x03, 0x4d, 0x44, 0x58, 0xaa, 0x02,
+	0x09, 0x4d, 0x69, 0x63, 0x69, 0x6e, 0x2e, 0x44, 0x65, 0x78, 0xca, 0x02, 0x09, 0x4d, 0x69, 0x63,
+	0x69, 0x6e, 0x5c, 0x44, 0x65, 0x78, 0xe2, 0x02, 0x15, 0x4d, 0x69, 0x63, 0x69, 0x6e, 0x5c, 0x44,
+	0x65, 0x78, 0x5c, 0x47, 0x50, 0x42, 0x4d, 0x65, 0x74, 0x61, 0x64, 0x61, 0x74, 0x61, 0xea, 0x02,
+	0x0a, 0x4d, 0x69, 0x63, 0x69, 0x6e, 0x3a, 0x3a, 0x44, 0x65, 0x78, 0x62, 0x06, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x33,
 }
 
 var (
@@ -6412,7 +7376,7 @@ func file_micin_dex_tx_proto_rawDescGZIP() []byte {
 	return file_micin_dex_tx_proto_rawDescData
 }
 
-var file_micin_dex_tx_proto_msgTypes = make([]protoimpl.MessageInfo, 12)
+var file_micin_dex_tx_proto_msgTypes = make([]protoimpl.MessageInfo, 14)
 var file_micin_dex_tx_proto_goTypes = []interface{}{
 	(*MsgUpdateParams)(nil),            // 0: micin.dex.MsgUpdateParams
 	(*MsgUpdateParamsResponse)(nil),    // 1: micin.dex.MsgUpdateParamsResponse
@@ -6426,24 +7390,28 @@ var file_micin_dex_tx_proto_goTypes = []interface{}{
 	(*MsgAddLiquidity)(nil),            // 9: micin.dex.MsgAddLiquidity
 	(*MsgAddLiquidityResponse)(nil),    // 10: micin.dex.MsgAddLiquidityResponse
 	(*MsgRemoveLiquidityResponse)(nil), // 11: micin.dex.MsgRemoveLiquidityResponse
-	(*Params)(nil),                     // 12: micin.dex.Params
+	(*MsgSubmitSpeedTest)(nil),         // 12: micin.dex.MsgSubmitSpeedTest
+	(*MsgSubmitSpeedTestResponse)(nil), // 13: micin.dex.MsgSubmitSpeedTestResponse
+	(*Params)(nil),                     // 14: micin.dex.Params
 }
 var file_micin_dex_tx_proto_depIdxs = []int32{
-	12, // 0: micin.dex.MsgUpdateParams.params:type_name -> micin.dex.Params
+	14, // 0: micin.dex.MsgUpdateParams.params:type_name -> micin.dex.Params
 	0,  // 1: micin.dex.Msg.UpdateParams:input_type -> micin.dex.MsgUpdateParams
 	2,  // 2: micin.dex.Msg.CreatePool:input_type -> micin.dex.MsgCreatePool
 	4,  // 3: micin.dex.Msg.UpdatePool:input_type -> micin.dex.MsgUpdatePool
 	6,  // 4: micin.dex.Msg.DeletePool:input_type -> micin.dex.MsgDeletePool
 	8,  // 5: micin.dex.Msg.RemoveLiquidity:input_type -> micin.dex.MsgRemoveLiquidity
 	9,  // 6: micin.dex.Msg.AddLiquidity:input_type -> micin.dex.MsgAddLiquidity
-	1,  // 7: micin.dex.Msg.UpdateParams:output_type -> micin.dex.MsgUpdateParamsResponse
-	3,  // 8: micin.dex.Msg.CreatePool:output_type -> micin.dex.MsgCreatePoolResponse
-	5,  // 9: micin.dex.Msg.UpdatePool:output_type -> micin.dex.MsgUpdatePoolResponse
-	7,  // 10: micin.dex.Msg.DeletePool:output_type -> micin.dex.MsgDeletePoolResponse
-	11, // 11: micin.dex.Msg.RemoveLiquidity:output_type -> micin.dex.MsgRemoveLiquidityResponse
-	10, // 12: micin.dex.Msg.AddLiquidity:output_type -> micin.dex.MsgAddLiquidityResponse
-	7,  // [7:13] is the sub-list for method output_type
-	1,  // [1:7] is the sub-list for method input_type
+	12, // 7: micin.dex.Msg.SubmitSpeedTest:input_type -> micin.dex.MsgSubmitSpeedTest
+	1,  // 8: micin.dex.Msg.UpdateParams:output_type -> micin.dex.MsgUpdateParamsResponse
+	3,  // 9: micin.dex.Msg.CreatePool:output_type -> micin.dex.MsgCreatePoolResponse
+	5,  // 10: micin.dex.Msg.UpdatePool:output_type -> micin.dex.MsgUpdatePoolResponse
+	7,  // 11: micin.dex.Msg.DeletePool:output_type -> micin.dex.MsgDeletePoolResponse
+	11, // 12: micin.dex.Msg.RemoveLiquidity:output_type -> micin.dex.MsgRemoveLiquidityResponse
+	10, // 13: micin.dex.Msg.AddLiquidity:output_type -> micin.dex.MsgAddLiquidityResponse
+	13, // 14: micin.dex.Msg.SubmitSpeedTest:output_type -> micin.dex.MsgSubmitSpeedTestResponse
+	8,  // [8:15] is the sub-list for method output_type
+	1,  // [1:8] is the sub-list for method input_type
 	1,  // [1:1] is the sub-list for extension type_name
 	1,  // [1:1] is the sub-list for extension extendee
 	0,  // [0:1] is the sub-list for field type_name
@@ -6601,6 +7569,30 @@ func file_micin_dex_tx_proto_init() {
 				return nil
 			}
 		}
+		file_micin_dex_tx_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MsgSubmitSpeedTest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_micin_dex_tx_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MsgSubmitSpeedTestResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -6608,7 +7600,7 @@ func file_micin_dex_tx_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_micin_dex_tx_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   12,
+			NumMessages:   14,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

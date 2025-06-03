@@ -88,6 +88,102 @@ func (m *MsgUpdateParams) GetParams() Params {
 	return Params{}
 }
 
+type MsgSubmitSpeedTest struct {
+	Creator   string `protobuf:"bytes,1,opt,name=creator,proto3" json:"creator,omitempty"`
+	SpeedMbps int64  `protobuf:"varint,2,opt,name=speed_mbps,json=speedMbps,proto3" json:"speed_mbps,omitempty"`
+	Timestamp int64  `protobuf:"varint,3,opt,name=timestamp,proto3" json:"timestamp,omitempty"`
+}
+
+func (m *MsgSubmitSpeedTest) Reset()         { *m = MsgSubmitSpeedTest{} }
+func (m *MsgSubmitSpeedTest) String() string { return proto.CompactTextString(m) }
+func (*MsgSubmitSpeedTest) ProtoMessage()    {}
+func (*MsgSubmitSpeedTest) Descriptor() ([]byte, []int) {
+	return fileDescriptor_20369d5b7a0e304d, []int{1}
+}
+func (m *MsgSubmitSpeedTest) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgSubmitSpeedTest) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgSubmitSpeedTest.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgSubmitSpeedTest) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgSubmitSpeedTest.Merge(m, src)
+}
+func (m *MsgSubmitSpeedTest) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgSubmitSpeedTest) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgSubmitSpeedTest.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgSubmitSpeedTest proto.InternalMessageInfo
+
+func (m *MsgSubmitSpeedTest) GetCreator() string {
+	if m != nil {
+		return m.Creator
+	}
+	return ""
+}
+
+func (m *MsgSubmitSpeedTest) GetSpeedMbps() int64 {
+	if m != nil {
+		return m.SpeedMbps
+	}
+	return 0
+}
+
+func (m *MsgSubmitSpeedTest) GetTimestamp() int64 {
+	if m != nil {
+		return m.Timestamp
+	}
+	return 0
+}
+
+type MsgSubmitSpeedTestResponse struct {
+}
+
+func (m *MsgSubmitSpeedTestResponse) Reset()         { *m = MsgSubmitSpeedTestResponse{} }
+func (m *MsgSubmitSpeedTestResponse) String() string { return proto.CompactTextString(m) }
+func (*MsgSubmitSpeedTestResponse) ProtoMessage()    {}
+func (*MsgSubmitSpeedTestResponse) Descriptor() ([]byte, []int) {
+	return fileDescriptor_20369d5b7a0e304d, []int{2}
+}
+func (m *MsgSubmitSpeedTestResponse) XXX_Unmarshal(b []byte) error {
+	return m.Unmarshal(b)
+}
+func (m *MsgSubmitSpeedTestResponse) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	if deterministic {
+		return xxx_messageInfo_MsgSubmitSpeedTestResponse.Marshal(b, m, deterministic)
+	} else {
+		b = b[:cap(b)]
+		n, err := m.MarshalToSizedBuffer(b)
+		if err != nil {
+			return nil, err
+		}
+		return b[:n], nil
+	}
+}
+func (m *MsgSubmitSpeedTestResponse) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_MsgSubmitSpeedTestResponse.Merge(m, src)
+}
+func (m *MsgSubmitSpeedTestResponse) XXX_Size() int {
+	return m.Size()
+}
+func (m *MsgSubmitSpeedTestResponse) XXX_DiscardUnknown() {
+	xxx_messageInfo_MsgSubmitSpeedTestResponse.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_MsgSubmitSpeedTestResponse proto.InternalMessageInfo
+
 // MsgUpdateParamsResponse defines the response structure for executing a
 // MsgUpdateParams message.
 type MsgUpdateParamsResponse struct {
@@ -97,7 +193,7 @@ func (m *MsgUpdateParamsResponse) Reset()         { *m = MsgUpdateParamsResponse
 func (m *MsgUpdateParamsResponse) String() string { return proto.CompactTextString(m) }
 func (*MsgUpdateParamsResponse) ProtoMessage()    {}
 func (*MsgUpdateParamsResponse) Descriptor() ([]byte, []int) {
-	return fileDescriptor_20369d5b7a0e304d, []int{1}
+	return fileDescriptor_20369d5b7a0e304d, []int{3}
 }
 func (m *MsgUpdateParamsResponse) XXX_Unmarshal(b []byte) error {
 	return m.Unmarshal(b)
@@ -128,33 +224,42 @@ var xxx_messageInfo_MsgUpdateParamsResponse proto.InternalMessageInfo
 
 func init() {
 	proto.RegisterType((*MsgUpdateParams)(nil), "micin.micin.MsgUpdateParams")
+	proto.RegisterType((*MsgSubmitSpeedTest)(nil), "micin.micin.MsgSubmitSpeedTest")
+	proto.RegisterType((*MsgSubmitSpeedTestResponse)(nil), "micin.micin.MsgSubmitSpeedTestResponse")
 	proto.RegisterType((*MsgUpdateParamsResponse)(nil), "micin.micin.MsgUpdateParamsResponse")
 }
 
 func init() { proto.RegisterFile("micin/micin/tx.proto", fileDescriptor_20369d5b7a0e304d) }
 
 var fileDescriptor_20369d5b7a0e304d = []byte{
-	// 313 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0x12, 0xc9, 0xcd, 0x4c, 0xce,
-	0xcc, 0xd3, 0x87, 0x90, 0x25, 0x15, 0x7a, 0x05, 0x45, 0xf9, 0x25, 0xf9, 0x42, 0xdc, 0x60, 0xbe,
-	0x1e, 0x98, 0x94, 0x12, 0x4c, 0xcc, 0xcd, 0xcc, 0xcb, 0xd7, 0x07, 0x93, 0x10, 0x79, 0x29, 0xf1,
-	0xe4, 0xfc, 0xe2, 0xdc, 0xfc, 0x62, 0xfd, 0xdc, 0xe2, 0x74, 0xfd, 0x32, 0x43, 0x10, 0x05, 0x95,
-	0x90, 0x84, 0x48, 0xc4, 0x83, 0x79, 0xfa, 0x10, 0x0e, 0x54, 0x4a, 0x24, 0x3d, 0x3f, 0x3d, 0x1f,
-	0x22, 0x0e, 0x62, 0x41, 0x45, 0x25, 0x90, 0xed, 0x2f, 0x48, 0x2c, 0x4a, 0xcc, 0x85, 0xaa, 0x57,
-	0xda, 0xcc, 0xc8, 0xc5, 0xef, 0x5b, 0x9c, 0x1e, 0x5a, 0x90, 0x92, 0x58, 0x92, 0x1a, 0x00, 0x96,
-	0x11, 0x32, 0xe3, 0xe2, 0x4c, 0x2c, 0x2d, 0xc9, 0xc8, 0x2f, 0xca, 0x2c, 0xa9, 0x94, 0x60, 0x54,
-	0x60, 0xd4, 0xe0, 0x74, 0x92, 0xb8, 0xb4, 0x45, 0x57, 0x04, 0x6a, 0x91, 0x63, 0x4a, 0x4a, 0x51,
-	0x6a, 0x71, 0x71, 0x70, 0x49, 0x51, 0x66, 0x5e, 0x7a, 0x10, 0x42, 0xa9, 0x90, 0x19, 0x17, 0x1b,
-	0xc4, 0x6c, 0x09, 0x26, 0x05, 0x46, 0x0d, 0x6e, 0x23, 0x61, 0x3d, 0x24, 0x0f, 0xea, 0x41, 0x0c,
-	0x77, 0xe2, 0x3c, 0x71, 0x4f, 0x9e, 0x61, 0xc5, 0xf3, 0x0d, 0x5a, 0x8c, 0x41, 0x50, 0xd5, 0x56,
-	0x06, 0x4d, 0xcf, 0x37, 0x68, 0x21, 0xcc, 0xe9, 0x7a, 0xbe, 0x41, 0x4b, 0x16, 0xe2, 0xd4, 0x0a,
-	0xa8, 0x93, 0xd1, 0x5c, 0xa8, 0x24, 0xc9, 0x25, 0x8e, 0x26, 0x14, 0x94, 0x5a, 0x5c, 0x90, 0x9f,
-	0x57, 0x9c, 0x6a, 0x94, 0xc0, 0xc5, 0xec, 0x5b, 0x9c, 0x2e, 0x14, 0xc4, 0xc5, 0x83, 0xe2, 0x27,
-	0x19, 0x14, 0xb7, 0xa0, 0x69, 0x96, 0x52, 0xc1, 0x27, 0x0b, 0x33, 0x5a, 0x8a, 0xb5, 0x01, 0xe4,
-	0x6c, 0x27, 0xdd, 0x13, 0x8f, 0xe4, 0x18, 0x2f, 0x3c, 0x92, 0x63, 0x7c, 0xf0, 0x48, 0x8e, 0x71,
-	0xc2, 0x63, 0x39, 0x86, 0x0b, 0x8f, 0xe5, 0x18, 0x6e, 0x3c, 0x96, 0x63, 0x88, 0x12, 0x46, 0x75,
-	0x75, 0x49, 0x65, 0x41, 0x6a, 0x71, 0x12, 0x1b, 0x38, 0xa0, 0x8d, 0x01, 0x01, 0x00, 0x00, 0xff,
-	0xff, 0x2f, 0xa1, 0x6d, 0xd6, 0x04, 0x02, 0x00, 0x00,
+	// 417 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0x84, 0x52, 0xcf, 0x8b, 0xda, 0x40,
+	0x18, 0xcd, 0x54, 0x6a, 0xc9, 0x58, 0x90, 0x8e, 0x82, 0x31, 0x68, 0x94, 0x50, 0xa8, 0x08, 0x26,
+	0xad, 0x05, 0x0f, 0xbd, 0xd5, 0x7b, 0xa0, 0xc4, 0xf6, 0xd2, 0x1e, 0x24, 0x31, 0x43, 0x1a, 0xca,
+	0x64, 0x86, 0xcc, 0x58, 0xf4, 0x56, 0x7a, 0xec, 0xa9, 0x7f, 0x46, 0x8f, 0x42, 0x7b, 0xed, 0xdd,
+	0xa3, 0xf4, 0xd4, 0xd3, 0xb2, 0xe8, 0xc1, 0x7f, 0x63, 0x49, 0x26, 0x59, 0x35, 0x0b, 0xbb, 0x97,
+	0x2f, 0xf9, 0xde, 0x7b, 0xf3, 0xbe, 0x37, 0x3f, 0x60, 0x93, 0x44, 0x8b, 0x28, 0xb6, 0x65, 0x15,
+	0x2b, 0x8b, 0x25, 0x54, 0x50, 0x54, 0xcb, 0x7a, 0x2b, 0xab, 0xfa, 0x33, 0x8f, 0x44, 0x31, 0xb5,
+	0xb3, 0x2a, 0x79, 0xbd, 0xb5, 0xa0, 0x9c, 0x50, 0x6e, 0x13, 0x1e, 0xda, 0x5f, 0x5f, 0xa5, 0x9f,
+	0x9c, 0x68, 0x4b, 0x62, 0x9e, 0x75, 0xb6, 0x6c, 0x72, 0xaa, 0x19, 0xd2, 0x90, 0x4a, 0x3c, 0xfd,
+	0xcb, 0x51, 0xed, 0x7c, 0x3e, 0xf3, 0x12, 0x8f, 0xe4, 0x7a, 0xf3, 0x37, 0x80, 0x75, 0x87, 0x87,
+	0x1f, 0x58, 0xe0, 0x09, 0xfc, 0x2e, 0x63, 0xd0, 0x04, 0xaa, 0xde, 0x52, 0x7c, 0xa6, 0x49, 0x24,
+	0xd6, 0x1a, 0xe8, 0x83, 0x81, 0x3a, 0xd5, 0xfe, 0xfd, 0x19, 0x35, 0xf3, 0x41, 0x6f, 0x83, 0x20,
+	0xc1, 0x9c, 0xcf, 0x44, 0x12, 0xc5, 0xa1, 0x7b, 0x92, 0xa2, 0x09, 0xac, 0x4a, 0x6f, 0xed, 0x51,
+	0x1f, 0x0c, 0x6a, 0xe3, 0x86, 0x75, 0xb6, 0x41, 0x4b, 0x9a, 0x4f, 0xd5, 0xed, 0x55, 0x4f, 0xf9,
+	0x75, 0xdc, 0x0c, 0x81, 0x9b, 0xab, 0xdf, 0xbc, 0xfc, 0x7e, 0xdc, 0x0c, 0x4f, 0x3e, 0x3f, 0x8e,
+	0x9b, 0x61, 0x57, 0x46, 0x5d, 0xe5, 0x91, 0x4b, 0x09, 0xcd, 0x2f, 0x10, 0x39, 0x3c, 0x9c, 0x2d,
+	0x7d, 0x12, 0x89, 0x19, 0xc3, 0x38, 0x78, 0x8f, 0xb9, 0x40, 0x1a, 0x7c, 0xb2, 0x48, 0xb0, 0x27,
+	0x68, 0x22, 0x53, 0xbb, 0x45, 0x8b, 0xba, 0x10, 0xf2, 0x54, 0x36, 0x27, 0x3e, 0x93, 0xe9, 0x2a,
+	0xae, 0x9a, 0x21, 0x8e, 0xcf, 0x38, 0xea, 0x40, 0x55, 0x44, 0x04, 0x73, 0xe1, 0x11, 0xa6, 0x55,
+	0x24, 0x7b, 0x0b, 0x98, 0x1d, 0xa8, 0xdf, 0x1d, 0xe6, 0x62, 0xce, 0x68, 0xcc, 0xb1, 0xd9, 0x86,
+	0xad, 0x52, 0xba, 0x82, 0x1a, 0xff, 0x05, 0xb0, 0xe2, 0xf0, 0x10, 0xb9, 0xf0, 0xe9, 0xc5, 0xf9,
+	0x76, 0x2e, 0xce, 0xa5, 0xb4, 0x5a, 0x7f, 0x7e, 0x1f, 0x5b, 0x78, 0xa3, 0x4f, 0xb0, 0x5e, 0xde,
+	0x7e, 0xaf, 0xbc, 0xb0, 0x24, 0xd0, 0x5f, 0x3c, 0x20, 0x28, 0xcc, 0xf5, 0xc7, 0xdf, 0xd2, 0xfb,
+	0x99, 0x8e, 0xb6, 0x7b, 0x03, 0xec, 0xf6, 0x06, 0xb8, 0xde, 0x1b, 0xe0, 0xe7, 0xc1, 0x50, 0x76,
+	0x07, 0x43, 0xf9, 0x7f, 0x30, 0x94, 0x8f, 0x8d, 0xcb, 0xeb, 0x11, 0x6b, 0x86, 0xb9, 0x5f, 0xcd,
+	0x5e, 0xd4, 0xeb, 0x9b, 0x00, 0x00, 0x00, 0xff, 0xff, 0xfc, 0x67, 0x7f, 0x32, 0xed, 0x02, 0x00,
+	0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -172,6 +277,7 @@ type MsgClient interface {
 	// UpdateParams defines a (governance) operation for updating the module
 	// parameters. The authority defaults to the x/gov module account.
 	UpdateParams(ctx context.Context, in *MsgUpdateParams, opts ...grpc.CallOption) (*MsgUpdateParamsResponse, error)
+	SubmitSpeedTest(ctx context.Context, in *MsgSubmitSpeedTest, opts ...grpc.CallOption) (*MsgSubmitSpeedTestResponse, error)
 }
 
 type msgClient struct {
@@ -191,11 +297,21 @@ func (c *msgClient) UpdateParams(ctx context.Context, in *MsgUpdateParams, opts 
 	return out, nil
 }
 
+func (c *msgClient) SubmitSpeedTest(ctx context.Context, in *MsgSubmitSpeedTest, opts ...grpc.CallOption) (*MsgSubmitSpeedTestResponse, error) {
+	out := new(MsgSubmitSpeedTestResponse)
+	err := c.cc.Invoke(ctx, "/micin.micin.Msg/SubmitSpeedTest", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // MsgServer is the server API for Msg service.
 type MsgServer interface {
 	// UpdateParams defines a (governance) operation for updating the module
 	// parameters. The authority defaults to the x/gov module account.
 	UpdateParams(context.Context, *MsgUpdateParams) (*MsgUpdateParamsResponse, error)
+	SubmitSpeedTest(context.Context, *MsgSubmitSpeedTest) (*MsgSubmitSpeedTestResponse, error)
 }
 
 // UnimplementedMsgServer can be embedded to have forward compatible implementations.
@@ -204,6 +320,9 @@ type UnimplementedMsgServer struct {
 
 func (*UnimplementedMsgServer) UpdateParams(ctx context.Context, req *MsgUpdateParams) (*MsgUpdateParamsResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method UpdateParams not implemented")
+}
+func (*UnimplementedMsgServer) SubmitSpeedTest(ctx context.Context, req *MsgSubmitSpeedTest) (*MsgSubmitSpeedTestResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method SubmitSpeedTest not implemented")
 }
 
 func RegisterMsgServer(s grpc1.Server, srv MsgServer) {
@@ -228,6 +347,24 @@ func _Msg_UpdateParams_Handler(srv interface{}, ctx context.Context, dec func(in
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Msg_SubmitSpeedTest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(MsgSubmitSpeedTest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(MsgServer).SubmitSpeedTest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/micin.micin.Msg/SubmitSpeedTest",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(MsgServer).SubmitSpeedTest(ctx, req.(*MsgSubmitSpeedTest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var Msg_serviceDesc = _Msg_serviceDesc
 var _Msg_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "micin.micin.Msg",
@@ -236,6 +373,10 @@ var _Msg_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "UpdateParams",
 			Handler:    _Msg_UpdateParams_Handler,
+		},
+		{
+			MethodName: "SubmitSpeedTest",
+			Handler:    _Msg_SubmitSpeedTest_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
@@ -279,6 +420,69 @@ func (m *MsgUpdateParams) MarshalToSizedBuffer(dAtA []byte) (int, error) {
 		i--
 		dAtA[i] = 0xa
 	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgSubmitSpeedTest) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgSubmitSpeedTest) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgSubmitSpeedTest) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
+	if m.Timestamp != 0 {
+		i = encodeVarintTx(dAtA, i, uint64(m.Timestamp))
+		i--
+		dAtA[i] = 0x18
+	}
+	if m.SpeedMbps != 0 {
+		i = encodeVarintTx(dAtA, i, uint64(m.SpeedMbps))
+		i--
+		dAtA[i] = 0x10
+	}
+	if len(m.Creator) > 0 {
+		i -= len(m.Creator)
+		copy(dAtA[i:], m.Creator)
+		i = encodeVarintTx(dAtA, i, uint64(len(m.Creator)))
+		i--
+		dAtA[i] = 0xa
+	}
+	return len(dAtA) - i, nil
+}
+
+func (m *MsgSubmitSpeedTestResponse) Marshal() (dAtA []byte, err error) {
+	size := m.Size()
+	dAtA = make([]byte, size)
+	n, err := m.MarshalToSizedBuffer(dAtA[:size])
+	if err != nil {
+		return nil, err
+	}
+	return dAtA[:n], nil
+}
+
+func (m *MsgSubmitSpeedTestResponse) MarshalTo(dAtA []byte) (int, error) {
+	size := m.Size()
+	return m.MarshalToSizedBuffer(dAtA[:size])
+}
+
+func (m *MsgSubmitSpeedTestResponse) MarshalToSizedBuffer(dAtA []byte) (int, error) {
+	i := len(dAtA)
+	_ = i
+	var l int
+	_ = l
 	return len(dAtA) - i, nil
 }
 
@@ -328,6 +532,34 @@ func (m *MsgUpdateParams) Size() (n int) {
 	}
 	l = m.Params.Size()
 	n += 1 + l + sovTx(uint64(l))
+	return n
+}
+
+func (m *MsgSubmitSpeedTest) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
+	l = len(m.Creator)
+	if l > 0 {
+		n += 1 + l + sovTx(uint64(l))
+	}
+	if m.SpeedMbps != 0 {
+		n += 1 + sovTx(uint64(m.SpeedMbps))
+	}
+	if m.Timestamp != 0 {
+		n += 1 + sovTx(uint64(m.Timestamp))
+	}
+	return n
+}
+
+func (m *MsgSubmitSpeedTestResponse) Size() (n int) {
+	if m == nil {
+		return 0
+	}
+	var l int
+	_ = l
 	return n
 }
 
@@ -440,6 +672,176 @@ func (m *MsgUpdateParams) Unmarshal(dAtA []byte) error {
 				return err
 			}
 			iNdEx = postIndex
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgSubmitSpeedTest) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgSubmitSpeedTest: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgSubmitSpeedTest: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
+		case 1:
+			if wireType != 2 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Creator", wireType)
+			}
+			var stringLen uint64
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				stringLen |= uint64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+			intStringLen := int(stringLen)
+			if intStringLen < 0 {
+				return ErrInvalidLengthTx
+			}
+			postIndex := iNdEx + intStringLen
+			if postIndex < 0 {
+				return ErrInvalidLengthTx
+			}
+			if postIndex > l {
+				return io.ErrUnexpectedEOF
+			}
+			m.Creator = string(dAtA[iNdEx:postIndex])
+			iNdEx = postIndex
+		case 2:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field SpeedMbps", wireType)
+			}
+			m.SpeedMbps = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.SpeedMbps |= int64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		case 3:
+			if wireType != 0 {
+				return fmt.Errorf("proto: wrong wireType = %d for field Timestamp", wireType)
+			}
+			m.Timestamp = 0
+			for shift := uint(0); ; shift += 7 {
+				if shift >= 64 {
+					return ErrIntOverflowTx
+				}
+				if iNdEx >= l {
+					return io.ErrUnexpectedEOF
+				}
+				b := dAtA[iNdEx]
+				iNdEx++
+				m.Timestamp |= int64(b&0x7F) << shift
+				if b < 0x80 {
+					break
+				}
+			}
+		default:
+			iNdEx = preIndex
+			skippy, err := skipTx(dAtA[iNdEx:])
+			if err != nil {
+				return err
+			}
+			if (skippy < 0) || (iNdEx+skippy) < 0 {
+				return ErrInvalidLengthTx
+			}
+			if (iNdEx + skippy) > l {
+				return io.ErrUnexpectedEOF
+			}
+			iNdEx += skippy
+		}
+	}
+
+	if iNdEx > l {
+		return io.ErrUnexpectedEOF
+	}
+	return nil
+}
+func (m *MsgSubmitSpeedTestResponse) Unmarshal(dAtA []byte) error {
+	l := len(dAtA)
+	iNdEx := 0
+	for iNdEx < l {
+		preIndex := iNdEx
+		var wire uint64
+		for shift := uint(0); ; shift += 7 {
+			if shift >= 64 {
+				return ErrIntOverflowTx
+			}
+			if iNdEx >= l {
+				return io.ErrUnexpectedEOF
+			}
+			b := dAtA[iNdEx]
+			iNdEx++
+			wire |= uint64(b&0x7F) << shift
+			if b < 0x80 {
+				break
+			}
+		}
+		fieldNum := int32(wire >> 3)
+		wireType := int(wire & 0x7)
+		if wireType == 4 {
+			return fmt.Errorf("proto: MsgSubmitSpeedTestResponse: wiretype end group for non-group")
+		}
+		if fieldNum <= 0 {
+			return fmt.Errorf("proto: MsgSubmitSpeedTestResponse: illegal tag %d (wire type %d)", fieldNum, wire)
+		}
+		switch fieldNum {
 		default:
 			iNdEx = preIndex
 			skippy, err := skipTx(dAtA[iNdEx:])

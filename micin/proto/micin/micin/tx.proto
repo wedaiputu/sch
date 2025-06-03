@@ -16,6 +16,8 @@ service Msg {
   // UpdateParams defines a (governance) operation for updating the module
   // parameters. The authority defaults to the x/gov module account.
   rpc UpdateParams(MsgUpdateParams) returns (MsgUpdateParamsResponse);
+
+  rpc SubmitSpeedTest(MsgSubmitSpeedTest) returns (MsgSubmitSpeedTestResponse);
 }
 
 // MsgUpdateParams is the Msg/UpdateParams request type.
@@ -34,6 +36,13 @@ message MsgUpdateParams {
     (amino.dont_omitempty) = true
   ];
 }
+
+message MsgSubmitSpeedTest {
+  string creator = 1;
+  int64 speed_mbps = 2;
+  int64 timestamp = 3;
+}
+message MsgSubmitSpeedTestResponse {}
 
 // MsgUpdateParamsResponse defines the response structure for executing a
 // MsgUpdateParams message.

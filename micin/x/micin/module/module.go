@@ -212,3 +212,6 @@ func ProvideModule(in ModuleInputs) ModuleOutputs {
 
 	return ModuleOutputs{MicinKeeper: k, Module: m}
 }
+
+
+
