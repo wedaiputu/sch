@@ -53,9 +53,15 @@ import (
 	ibcexported "github.com/cosmos/ibc-go/v8/modules/core/exported"
 	"google.golang.org/protobuf/types/known/durationpb"
 
+	dexmodulev1 "micin/api/micin/dex/module"
 	micinmodulev1 "micin/api/micin/micin/module"
+	tokenmodulev1 "micin/api/micin/token/module"
+	_ "micin/x/dex/module" // import for side-effects
+	dexmoduletypes "micin/x/dex/types"
 	_ "micin/x/micin/module" // import for side-effects
 	micinmoduletypes "micin/x/micin/types"
+	_ "micin/x/token/module" // import for side-effects
+	tokenmoduletypes "micin/x/token/types"
 	// this line is used by starport scaffolding # stargate/app/moduleImport
 )
 
@@ -94,6 +100,8 @@ var (
 		circuittypes.ModuleName,
 		// chain modules
 		micinmoduletypes.ModuleName,
+		tokenmoduletypes.ModuleName,
+		dexmoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/initGenesis
 	}
 
@@ -119,6 +127,8 @@ var (
 		ibcfeetypes.ModuleName,
 		// chain modules
 		micinmoduletypes.ModuleName,
+		tokenmoduletypes.ModuleName,
+		dexmoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/beginBlockers
 	}
 
@@ -138,6 +148,8 @@ var (
 		ibcfeetypes.ModuleName,
 		// chain modules
 		micinmoduletypes.ModuleName,
+		tokenmoduletypes.ModuleName,
+		dexmoduletypes.ModuleName,
 		// this line is used by starport scaffolding # stargate/app/endBlockers
 	}
 
@@ -296,6 +308,14 @@ var (
 			{
 				Name:   micinmoduletypes.ModuleName,
 				Config: appconfig.WrapAny(&micinmodulev1.Module{}),
+			},
+			{
+				Name:   tokenmoduletypes.ModuleName,
+				Config: appconfig.WrapAny(&tokenmodulev1.Module{}),
+			},
+			{
+				Name:   dexmoduletypes.ModuleName,
+				Config: appconfig.WrapAny(&dexmodulev1.Module{}),
 			},
 			// this line is used by starport scaffolding # stargate/app/moduleConfig
 		},

@@ -1,0 +1,13 @@
+syntax = "proto3";
+package micin.dex;
+
+option go_package = "micin/x/dex/types";
+
+message Pool {
+  uint64 id = 1;
+  string creator = 2;     // Tambahkan field creator, karena di Go struct digunakan
+  string tokenA = 3;
+  string tokenB = 4;
+  uint64 reserveA = 5;
+  uint64 reserveB = 6;
+}

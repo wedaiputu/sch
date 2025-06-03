@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+package micin.token;
+
+import "amino/amino.proto";
+import "gogoproto/gogo.proto";
+import "micin/token/params.proto";
+import "micin/token/coin.proto";
+
+option go_package = "micin/x/token/types";
+
+// GenesisState defines the token module's genesis state.
+message GenesisState {
+  
+  // params defines all the parameters of the module.
+           Params params    = 1 [(gogoproto.nullable) = false, (amino.dont_omitempty) = true];
+  repeated Coin   coinList  = 2 [(gogoproto.nullable) = false] ;
+           uint64 coinCount = 3;
+}
+

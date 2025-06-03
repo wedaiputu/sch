@@ -1,0 +1,12 @@
+syntax = "proto3";
+package micin.token;
+
+option go_package = "micin/x/token/types";
+
+message Coin {
+  uint64 id = 1;
+  string name = 2; 
+  string supply = 3; 
+  string owner = 4; 
+  string creator = 5;
+}
