@@ -9,6 +9,12 @@ const (
 
 	// MemStoreKey defines the in-memory store key
 	MemStoreKey = "mem_micin"
+
+	// RouterKey is used to route messages
+	RouterKey = ModuleName
+
+	// QuerierRoute is used for queries
+	QuerierRoute = ModuleName
 )
 
 var (

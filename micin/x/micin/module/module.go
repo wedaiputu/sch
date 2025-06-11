@@ -190,7 +190,6 @@ type ModuleOutputs struct {
 	MicinKeeper keeper.Keeper
 	Module      appmodule.AppModule
 }
-
 func ProvideModule(in ModuleInputs) ModuleOutputs {
 	// default to governance authority if not provided
 	authority := authtypes.NewModuleAddress(govtypes.ModuleName)
@@ -202,6 +201,7 @@ func ProvideModule(in ModuleInputs) ModuleOutputs {
 		in.StoreService,
 		in.Logger,
 		authority.String(),
+		in.BankKeeper,  // pastikan kamu mengirim bankKeeper sesuai keeper.NewKeeper signature
 	)
 	m := NewAppModule(
 		in.Cdc,
@@ -212,6 +212,3 @@ func ProvideModule(in ModuleInputs) ModuleOutputs {
 
 	return ModuleOutputs{MicinKeeper: k, Module: m}
 }
-
-
-

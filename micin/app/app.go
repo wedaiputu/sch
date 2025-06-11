@@ -180,21 +180,24 @@ func getGovProposalHandlers() []govclient.ProposalHandler {
 }
 
 // AppConfig returns the default app config.
+var (
+	interfaceRegistry = codectypes.NewInterfaceRegistry()
+	cdc               = codec.NewProtoCodec(interfaceRegistry)
+)
+
 func AppConfig() depinject.Config {
 	return depinject.Configs(
 		appConfig,
-		// Alternatively, load the app config from a YAML file.
-		// appconfig.LoadYAML(AppConfigYAML),
 		depinject.Supply(
-			// supply custom module basics
 			map[string]module.AppModuleBasic{
 				genutiltypes.ModuleName: genutil.NewAppModuleBasic(genutiltypes.DefaultMessageValidator),
 				govtypes.ModuleName:     gov.NewAppModuleBasic(getGovProposalHandlers()),
-				// this line is used by starport scaffolding # stargate/appConfig/moduleBasic
+				micin.ModuleName:        micin.NewAppModuleBasic(cdc),
 			},
 		),
 	)
 }
+
 
 // New returns a reference to an initialized App.
 func New(

@@ -22,3 +22,5 @@ func TestMsgServer(t *testing.T) {
 	require.NotNil(t, ctx)
 	require.NotEmpty(t, k)
 }
+
+
